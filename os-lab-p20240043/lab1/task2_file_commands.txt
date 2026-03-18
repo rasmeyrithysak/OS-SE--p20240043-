@@ -1,0 +1,17 @@
+/home/rasmey-rithysak/os-se-p20240043/os-lab-p20240043/lab1/task2_files
+a.txt
+b_renamed.txt
+a.txt
+b_renamed.txt
+b.txt
+This is file A
+This is file B
+a_copy.txt
+a.txt
+b_renamed.txt
+b.txt
+a_copy.txt
+a.txt
+b_renamed.txt
+a.txt
+b_renamed.txt
