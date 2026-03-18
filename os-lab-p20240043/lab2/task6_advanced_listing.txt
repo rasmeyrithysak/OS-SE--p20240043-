@@ -1,0 +1,235 @@
+=== Task 6: Advanced Listing & Directory Audit ===
+--- Recursive Listing (ls -R) ---
+techcorp:
+engineering
+hr
+marketing
+
+techcorp/engineering:
+backend
+devops
+frontend
+
+techcorp/engineering/backend:
+app.js
+database.sql
+pipeline_backup.txt
+server_config.txt
+
+techcorp/engineering/devops:
+docker-compose.yml
+Dockerfile
+pipeline.txt
+security_audit.txt
+server_notice.txt
+
+techcorp/engineering/frontend:
+frontend_config.txt
+index.html
+styles.css
+
+techcorp/hr:
+onboarding
+policies
+
+techcorp/hr/onboarding:
+checklist.txt
+handbook.txt
+leave_policy.txt
+welcome_guide.txt
+
+techcorp/hr/policies:
+leave_policy.txt
+remote_work.txt
+
+techcorp/marketing:
+assets
+campaigns
+
+techcorp/marketing/assets:
+banner.jpg
+brochure.pdf
+logo_brief.txt
+logo.png
+
+techcorp/marketing/campaigns:
+q1_2026_launch.txt
+social_media.txt
+
+--- Sort by Size: engineering/ (ls -lS) ---
+total 4
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 26 Mar 18 21:05 frontend_config.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 index.html
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 styles.css
+total 8
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:20 pipeline_backup.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 server_config.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 app.js
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 database.sql
+total 12
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 48 Mar 18 21:17 server_notice.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 34 Mar 18 21:20 security_audit.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 pipeline.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 docker-compose.yml
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 Dockerfile
+
+--- Sort by Time: techcorp/ (ls -lt) ---
+total 8
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:05 leave_policy.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 32 Mar 18 21:05 remote_work.txt
+total 12
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:18 leave_policy.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 23 Mar 18 21:17 handbook.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 checklist.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 52 Mar 18 21:05 welcome_guide.txt
+total 8
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 32 Mar 18 21:05 q1_2026_launch.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 35 Mar 18 21:05 social_media.txt
+
+--- Human-Readable (ls -lh) ---
+total 4.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 banner.jpg
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 brochure.pdf
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 22 Mar 18 21:17 logo_brief.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 logo.png
+total 12K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 docker-compose.yml
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 Dockerfile
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 pipeline.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 34 Mar 18 21:20 security_audit.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 48 Mar 18 21:17 server_notice.txt
+
+--- Reverse Sort by Size (ls -rlS) ---
+total 8
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 database.sql
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 app.js
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 server_config.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:20 pipeline_backup.txt
+
+--- Reverse Sort by Time (ls -rlt) ---
+total 12
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 52 Mar 18 21:05 welcome_guide.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 checklist.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 23 Mar 18 21:17 handbook.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:18 leave_policy.txt
+
+--- Combined: Recursive + Human-Readable + Sort by Size (ls -lhRS) ---
+techcorp/:
+total 12K
+drwxrwxr-x 5 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:05 engineering
+drwxrwxr-x 4 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:05 hr
+drwxrwxr-x 4 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:17 marketing
+
+techcorp/engineering:
+total 12K
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 backend
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 devops
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 frontend
+
+techcorp/engineering/backend:
+total 8.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:20 pipeline_backup.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 server_config.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 app.js
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 database.sql
+
+techcorp/engineering/devops:
+total 12K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 48 Mar 18 21:17 server_notice.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 34 Mar 18 21:20 security_audit.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 pipeline.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 docker-compose.yml
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 Dockerfile
+
+techcorp/engineering/frontend:
+total 4.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 26 Mar 18 21:05 frontend_config.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 index.html
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 styles.css
+
+techcorp/hr:
+total 8.0K
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:18 onboarding
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 policies
+
+techcorp/hr/onboarding:
+total 12K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 52 Mar 18 21:05 welcome_guide.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:18 leave_policy.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 23 Mar 18 21:17 handbook.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 checklist.txt
+
+techcorp/hr/policies:
+total 8.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:05 leave_policy.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 32 Mar 18 21:05 remote_work.txt
+
+techcorp/marketing:
+total 8.0K
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:17 assets
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 22 Mar 18 21:17 logo_brief.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 banner.jpg
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 brochure.pdf
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 35 Mar 18 21:05 social_media.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 32 Mar 18 21:05 q1_2026_launch.txt
+
+--- Challenge Investigation ---
+total 12
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 39 Mar 18 21:18 leave_policy.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 23 Mar 18 21:17 handbook.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 checklist.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 52 Mar 18 21:05 welcome_guide.txt
+techcorp/marketing/:
+total 8.0K
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:17 assets
+drwxrwxr-x 2 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 21:20 campaigns
+
+techcorp/marketing/assets:
+total 4.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 banner.jpg
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 brochure.pdf
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 22 Mar 18 21:17 logo_brief.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 logo.png
+
+techcorp/marketing/campaigns:
+total 8.0K
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 32 Mar 18 21:05 q1_2026_launch.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 35 Mar 18 21:05 social_media.txt
+total 12
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 Dockerfile
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak  0 Mar 18 21:05 docker-compose.yml
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 29 Mar 18 21:05 pipeline.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 34 Mar 18 21:20 security_audit.txt
+-rw-rw-r-- 1 rasmey-rithysak rasmey-rithysak 48 Mar 18 21:17 server_notice.txt
+total 84K
+drwxr-x--- 16 rasmey-rithysak rasmey-rithysak 4.0K Mar 18 20:55 .
+drwxr-xr-x  3 root            root            4.0K Mar 12 14:13 ..
+drwx------  8 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:24 .cache
+drwx------ 13 rasmey-rithysak rasmey-rithysak 4.0K Mar 17 08:05 .config
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Desktop
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Documents
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Downloads
+drwx------  4 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 .local
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Music
+drwxrwxr-x  4 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 15:13 os-se-p20240043
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Pictures
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Public
+drwx------  5 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 15:00 snap
+drwx------  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:18 .ssh
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Templates
+drwxr-xr-x  2 rasmey-rithysak rasmey-rithysak 4.0K Mar 12 14:19 Videos
+-rw-r--r--  1 rasmey-rithysak rasmey-rithysak 3.7K Mar 31  2024 .bashrc
+-rw-rw-r--  1 rasmey-rithysak rasmey-rithysak 1.8K Mar 17 11:46 task3_apt_update.txt
+-rw-r--r--  1 rasmey-rithysak rasmey-rithysak  807 Mar 31  2024 .profile
+-rw-r--r--  1 rasmey-rithysak rasmey-rithysak  220 Mar 31  2024 .bash_logout
+-rw-rw-r--  1 rasmey-rithysak rasmey-rithysak   39 Mar 12 15:10 .gitconfig
+-rw-------  1 rasmey-rithysak rasmey-rithysak    0 Mar 12 14:49 .bash_history
+-rw-r--r--  1 rasmey-rithysak rasmey-rithysak    0 Mar 12 14:49 .sudo_as_admin_successful
