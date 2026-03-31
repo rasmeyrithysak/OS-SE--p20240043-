@@ -1,0 +1,20 @@
+  393  echo "4b: Shared objects starting with libm ---" >> task4_shared_objects.txt
+  394  ls /lib/x86_64-linux-gnu/libm* >> task4_shared_objects.txt
+  395  echo "" >> task4_shared_objects.txt
+  396  echo "4c: Real file behind libc.so.6 ---" >> task4_shared_objects.txt
+  397  readlink -f /lib/x86_64-linux-gnu/libc.so.6 >> task4_shared_objects.txt
+  398  echo "" >> task4_shared_objects.txt
+  399  echo "4d: Compiled test program ---" >> task4_shared_objects.txt
+  400  echo 'int main() { return 0; }' > /tmp/test_link.c
+  401  gcc /tmp/test_link.c -o /tmp/test_link 2>/dev/null
+  402  ldd /tmp/test_link >> task4_shared_objects.txt 2>&1
+  403  cd ~/os-se-p20240043/os-lab-p20240043/lab3
+  404  cat task1_wildcards.txt
+  405  [200~cd ~/os-se-p20240043/os-class-activities-p20240043/activity2/task1~
+  406  cd ~/os-se-p20240043/os-class-activities-p20240043/activity2/task1
+  407  gcc -o forkchild forkchild.c
+  408  [200~gcc-12 -o forkchild forkchild.c~
+  409  gcc-12 -o forkchild forkchild.c
+  410  ./forkchild > result_forkchild.txt 2>&1
+  411  cat result_forkchild.txt
+  412  history | tail -n 20 > command_used_forkchild.txt

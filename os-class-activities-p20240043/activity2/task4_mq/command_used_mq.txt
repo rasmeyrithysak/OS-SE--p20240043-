@@ -1,0 +1,20 @@
+  428  history | tail -n 20 > command_used_shm.txt
+  429  cd ~/os-se-p20240043/os-class-activities-p20240043/activity2/task4_mq
+  430  code common.h
+  431  code sender.c
+  432  code receiver.c
+  433  /* receiver.c — Receives a message from a POSIX message queue */
+  434  #include <stdio.h>
+  435  #include <stdlib.h>
+  436  #include <string.h>
+  437  #include <mqueue.h>
+  438  #include <fcntl.h>
+  439  #include "common.h"
+  440  int main() {
+  441  }
+  442  gcc-12 -o sender sender.c -lrt
+  443  gcc-12 -o receiver receiver.c -lrt
+  444  ./sender
+  445  ./receiver > result-mq-ipc.txt
+  446  cat result-mq-ipc.txt
+  447  history | tail -n 20 > command_used_mq.txt

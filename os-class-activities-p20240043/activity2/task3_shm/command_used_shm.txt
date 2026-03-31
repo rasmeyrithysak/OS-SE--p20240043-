@@ -1,0 +1,20 @@
+  409  gcc-12 -o forkchild forkchild.c
+  410  ./forkchild > result_forkchild.txt 2>&1
+  411  cat result_forkchild.txt
+  412  history | tail -n 20 > command_used_forkchild.txt
+  413  cd ~/os-se-p20240043/os-class-activities-p20240043/activity2/task3_shm
+  414  code shm-producer.c
+  415  pwd
+  416  ls
+  417  gcc-12 -o shm-producer shm-producer.c -lrt
+  418  code shm-consumer.c
+  419  gcc-12 -o shm-consumer shm-consumer.c -lrt
+  420  ./shm-producer
+  421  ./shm-consumer > result-shm-ipc.txt
+  422  ./shm-producer
+  423  ./shm-consumer > result-shm-ipc.txt
+  424  gcc-12 -o shm-consumer shm-consumer.c -lrt
+  425  ./shm-producer
+  426  ./shm-consumer > result-shm-ipc.txt
+  427  cat result-shm-ipc.txt
+  428  history | tail -n 20 > command_used_shm.txt
