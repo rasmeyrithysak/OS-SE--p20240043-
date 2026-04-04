@@ -1,0 +1,101 @@
+=== Full Command History ===
+        double up_seconds;
+        if (fscanf(fp, "%lf", &up_seconds) == 1) {
+            int hours = (int)(up_seconds / 3600);
+            int minutes = ((int)up_seconds % 3600) / 60;
+            snprintf(uptime_buf, sizeof(uptime_buf),
+                     "%d hours, %d minutes", hours, minutes);
+        }
+        fclose(fp);
+        return uptime_buf;
+    }
+    return "unknown";
+}
+
+int tc_get_cpu_count(void) {
+    return (int)sysconf(_SC_NPROCESSORS_ONLN);
+}
+EOF
+
+  417  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  418  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o
+  419  echo "" >> ../task5_shared_library.txt
+  420  echo "--- Partner A: Compiled shared library ---" >> ../task5_shared_library.txt
+  421  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  422  ls -l libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  423  cd ~/os-se-p20240043
+  424  git add .
+  425  git commit -m "Lab 3 Task 5 progress"
+  426  git push origin master
+  427  git pull origin master
+  428  cd ~/os-se-p20240043/os-lab-p20240043/lab3/shared_lib_lab
+  429  gcc sysinfo_test.c -L. -ltechcorp_sysinfo -o sysinfo_test
+  430  echo "" >> ../task5_shared_library.txt
+  431  echo "--- Integration: ldd on test program (before install) ---" >> ../task5_shared_library.txt
+  432  ldd ./sysinfo_test >> ../task5_shared_library.txt 2>&1
+  433  echo "" >> ../task5_shared_library.txt
+  434  echo "--- Integration: Test run (using LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  435  LD_LIBRARY_PATH=. ./sysinfo_test >> ../task5_shared_library.txt
+  436  LD_LIBRARY_PATH=. ./sysinfo_test
+  437  cat > techcorp_sysinfo.h << 'EOF'
+#ifndef TECHCORP_SYSINFO_H
+#define TECHCORP_SYSINFO_H
+
+const char* tc_get_hostname(void);
+const char* tc_get_uptime(void);
+int tc_get_cpu_count(void);
+
+// NEW — Returns total memory in MB
+long tc_get_memory_mb(void);
+
+#endif
+EOF
+
+  438  gcc -fPIC -c techcorp_sysinfo.c -o techcorp_sysinfo.o
+  439  gcc -fPIC -c techcorp_memory.c -o techcorp_memory.o
+  440  gcc -shared -o libtechcorp_sysinfo.so techcorp_sysinfo.o techcorp_memory.o
+  441  echo "" >> ../task5_shared_library.txt
+  442  echo "--- Phase 4: Partner B recompiled library with new function ---" >> ../task5_shared_library.txt
+  443  file libtechcorp_sysinfo.so >> ../task5_shared_library.txt
+  444  cat > sysinfo_test_v2.c << 'EOF'
+#include <stdio.h>
+#include "techcorp_sysinfo.h"
+
+int main(void) {
+    printf("=== TechCorp System Info Report v2 ===\n");
+    printf("Hostname : %s\n", tc_get_hostname());
+    printf("Uptime   : %s\n", tc_get_uptime());
+    printf("CPU Cores: %d\n", tc_get_cpu_count());
+    printf("Memory   : %ld MB\n", tc_get_memory_mb());
+    printf("======================================\n");
+    return 0;
+}
+EOF
+
+  445  echo "" >> ../task5_shared_library.txt
+  446  echo "--- Phase 4: Partner A wrote v2 test ---" >> ../task5_shared_library.txt
+  447  cat sysinfo_test_v2.c >> ../task5_shared_library.txt
+  448  gcc sysinfo_test_v2.c -L. -ltechcorp_sysinfo -o sysinfo_test_v2
+  449  echo "" >> ../task5_shared_library.txt
+  450  echo "--- Phase 4: v2 test run ---" >> ../task5_shared_library.txt
+  451  LD_LIBRARY_PATH=. ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  452  LD_LIBRARY_PATH=. ./sysinfo_test_v2
+  453  sudo cp libtechcorp_sysinfo.so /usr/local/lib/
+  454  sudo ldconfig
+  455  echo "" >> ../task5_shared_library.txt
+  456  echo "--- System-wide install: ldconfig cache ---" >> ../task5_shared_library.txt
+  457  ldconfig -p | grep techcorp >> ../task5_shared_library.txt
+  458  echo "" >> ../task5_shared_library.txt
+  459  echo "--- System-wide test (no LD_LIBRARY_PATH) ---" >> ../task5_shared_library.txt
+  460  ldd ./sysinfo_test_v2 >> ../task5_shared_library.txt 2>&1
+  461  ./sysinfo_test_v2 >> ../task5_shared_library.txt
+  462  echo "" >> ../task5_shared_library.txt
+  463  echo "--- Pair Information ---" >> ../task5_shared_library.txt
+  464  echo "Role A (Library Author → v2 Tester): Rasmey Rithysak - p20240043" >> ../task5_shared_library.txt
+  465  echo "Role B (Test Author → v2 Library Extender): <Ouk Puthirith> - <p20240033>" >> ../task5_shared_library.txt
+  466  ldconfig -p | grep techcorp
+  467  ldd ./sysinfo_test_v2
+  468  ./sysinfo_test_v2
+  469  cd ~/os-se-p20240043/os-lab-p20240043/lab3
+  470  echo "=== Full Command History ===" > task_history.txt
+  471  history | tail -n 100 >> task_history.txt
