@@ -1,0 +1,20 @@
+  544  cd os-se-p20240043
+  545  ls
+  546  cd os-class-activities-p20240043/
+  547  ls
+  548  activity
+  549  cd activity3
+  550  ls
+  551  task2_threads/
+  552  cd task2_threads/
+  553  nano threads.c
+  554  gcc -o threads threads.c -pthread
+  555  ./threads
+  556  ./threads > result_threads.txt 2>&1
+  557  nano threads_mutex.c
+  558  gcc -o threads_mutex threads_mutex.c -pthread
+  559  ./threads_mutex
+  560  cat result_threads.txt
+  561  cat result_threads_mutex.txt
+  562  ./threads_mutex > result_threads_mutex.txt 2>&1
+  563  history | tail -n 20 > command_used_threads.txt

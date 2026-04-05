@@ -1,0 +1,30 @@
+  572  ps -eLf | grep threads_observe
+  573  ps -T -p 3585
+  574  ls /proc/3585/task/
+  575  ls /proc/3585/task/ | wc -l
+  576  ps -eLf | grep threads_observe > result_observe_linux.txt
+  577  ps -T -p 3585 >> result_observe_linux.txt
+  578  echo "--- /proc/3585/task/ listing ---" >> result_observe_linux.txt
+  579  ls /proc/3585/task/ >> result_observe_linux.txt
+  580  htop
+  581  ./threads_observe & && htop
+  582  ./threads_observe &
+  583  htop
+  584  kill %1
+  585  cd ../task3_java
+  586  nano ThreadDemo.java
+  587  javac ThreadDemo.java
+  588  java ThreadDemo
+  589  sudo apt install default-jdk -y
+  590  javac ThreadDemo.java
+  591  java ThreadDemo
+  592  java ThreadDemo > result_thread_demo.txt 2>&1
+  593  nano RunnableDemo.java
+  594  javac RunnableDemo.java
+  595  java RunnableDemo
+  596  java RunnableDemo > result_runnable_demo.txt 2>&1
+  597  nano PoolDemo.java
+  598  javac PoolDemo.java
+  599  java PoolDemo
+  600  java PoolDemo > result_pool_demo.txt 2>&1
+  601  history | tail -n 30 > command_used_java.txt

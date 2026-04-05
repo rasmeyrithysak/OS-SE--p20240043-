@@ -1,0 +1,18 @@
+rasmey-+    3585    3394    3585  0    5 18:12 pts/0    00:00:00 ./threads_observe
+rasmey-+    3585    3394    3586  0    5 18:12 pts/0    00:00:00 ./threads_observe
+rasmey-+    3585    3394    3587  0    5 18:12 pts/0    00:00:00 ./threads_observe
+rasmey-+    3585    3394    3588  0    5 18:12 pts/0    00:00:00 ./threads_observe
+rasmey-+    3585    3394    3589  0    5 18:12 pts/0    00:00:00 ./threads_observe
+rasmey-+    3597    3394    3597  0    1 18:13 pts/0    00:00:00 grep --color=auto threads_observe
+    PID    SPID TTY          TIME CMD
+   3585    3585 pts/0    00:00:00 threads_observe
+   3585    3586 pts/0    00:00:00 threads_observe
+   3585    3587 pts/0    00:00:00 threads_observe
+   3585    3588 pts/0    00:00:00 threads_observe
+   3585    3589 pts/0    00:00:00 threads_observe
+--- /proc/3585/task/ listing ---
+3585
+3586
+3587
+3588
+3589
