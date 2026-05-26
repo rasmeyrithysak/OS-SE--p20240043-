@@ -1,0 +1,5 @@
+=== inbox permissions ===
+drwx-wx-wx 2 se-rasmey-rithysak se-rasmey-rithysak 4096 May 26 14:18 /home/se-rasmey-rithysak/public_inbox
+=== inbox files as owner ===
+total 0
+-rw-rw-r-- 1 se-chea-seavhong se-chea-seavhong 0 May 26 14:18 test_from_seavhong.txt

@@ -1,0 +1,6 @@
+=== broadcaster script ===
+-rwxrwxr-x 1 se-rasmey-rithysak se-rasmey-rithysak 331 May 26 14:22 /home/se-rasmey-rithysak/bin/broadcaster
+=== outbox permissions ===
+drwxr-xr-x 2 se-rasmey-rithysak se-rasmey-rithysak 4096 May 26 14:22 /home/se-rasmey-rithysak/public_outbox
+=== secret.txt ===
+semaphore - 2026-05-26 14:22:59

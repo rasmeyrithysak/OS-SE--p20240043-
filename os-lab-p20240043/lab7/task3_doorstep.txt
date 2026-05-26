@@ -1,0 +1,7 @@
+=== doorstep message ===
+========================================
+Welcome, se-rasmey-rithysak
+Users currently logged in: 15
+Server uptime: up 21 hours, 36 minutes
+Random tech quote: Keep calm and check the logs.
+========================================

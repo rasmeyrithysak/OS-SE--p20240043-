@@ -1,0 +1,6 @@
+=== guestbook permissions ===
+-rw------- 1 se-rasmey-rithysak se-rasmey-rithysak 33 May 26 14:31 /home/se-rasmey-rithysak/guestbook.txt
+=== sign_book permissions ===
+-rwsr-xr-x 1 se-rasmey-rithysak se-rasmey-rithysak 16096 May 26 14:27 /home/se-rasmey-rithysak/bin/sign_book
+=== guestbook contents ===
+Visitor signed: Hello from kiddo
