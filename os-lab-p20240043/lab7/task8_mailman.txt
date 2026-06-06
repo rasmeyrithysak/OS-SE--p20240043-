@@ -1,0 +1,10 @@
+=== mailman output ===
+Sent message to se-chea-seavhong
+Sent message to se-chheng-kimter
+Sent message to se-chheng-sokuntheary
+Messages sent: 3
+=== my inbox ===
+total 0
+-rw-rw-r-- 1 se-chhi-layhorng se-chhi-layhorng 0 May 26 14:21 test_from_horng.txt
+-rw-rw-r-- 1 se-chea-seavhong se-chea-seavhong 0 May 26 14:18 test_from_seavhong.txt
+=== messages I received ===
