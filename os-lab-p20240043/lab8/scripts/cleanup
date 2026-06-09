@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Get absolute path of this script so we never move ourselves
+script_path="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
+
+for filepath in *; do
+    # Skip if not a regular file
+    [ -f "$filepath" ] || continue
+
+    # Skip the script itself
+    [ "$(realpath "$filepath")" = "$script_path" ] && continue
+
+    # Extract extension
+    filename="$(basename "$filepath")"
+    ext="${filename##*.}"
+
+    # Skip files with no extension
+    if [ "$ext" = "$filename" ] || [ -z "$ext" ]; then
+        echo "Skipping (no extension): $filepath"
+        continue
+    fi
+
+    # Create folder and move file
+    mkdir -p "$ext"
+    mv "$filepath" "$ext/"
+    echo "Moved: $filepath -> $ext/"
+done
