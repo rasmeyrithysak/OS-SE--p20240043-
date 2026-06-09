@@ -1,0 +1,8 @@
+=== drop zone permissions ===
+drwxrwxrwt 2 se-rasmey-rithysak se-rasmey-rithysak 4096 Jun  9 14:49 /home/se-rasmey-rithysak/vendor_reports
+=== drop zone files ===
+total 8
+-rw-rw-r-- 1 se-rasmey-rithysak  se-rasmey-rithysak  27 Jun  9 14:47 my_rules.txt
+-rw-rw-r-- 1 se-pi-sereyvathanak se-pi-sereyvathanak 15 Jun  9 14:49 partner_report.txt
+=== partner deletion result ===
+rm: cannot remove '/home/se-rasmey-rithysak/vendor_reports/my_rules.txt': Operation not permitted

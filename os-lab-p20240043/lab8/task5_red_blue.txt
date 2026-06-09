@@ -1,0 +1,21 @@
+=== public api permissions ===
+drwxr-x--x 12 se-rasmey-rithysak se-rasmey-rithysak 4096 Jun  9 14:14 /home/se-rasmey-rithysak
+drwxr-xr-x  2 se-rasmey-rithysak se-rasmey-rithysak 4096 Jun  9 14:39 /home/se-rasmey-rithysak/public_api
+total 12
+-rwxrwxr-x 1 se-rasmey-rithysak se-rasmey-rithysak 1296 Jun  9 14:14 buy_widget
+-rw-rw-rw- 1 se-rasmey-rithysak se-rasmey-rithysak    0 Jun  9 14:41 inventory.lock
+-rw-rw-rw- 1 se-rasmey-rithysak se-rasmey-rithysak    2 Jun  9 14:41 inventory.txt
+-rw-rw-rw- 1 se-rasmey-rithysak se-rasmey-rithysak 3541 Jun  9 14:41 sales.log
+=== inventory ===
+0
+=== red team sales evidence ===
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_47 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_50 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_46 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_43 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_14 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_21 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_40 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_33 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_45 bought 2 widgets.
+[p20240043] [SUCCESS] RedTeam_se-pi-sereyvathanak_24 bought 2 widgets.

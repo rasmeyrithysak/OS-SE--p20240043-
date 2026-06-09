@@ -1,0 +1,14 @@
+.:
+csv
+log
+noextension
+tmp
+
+./csv:
+data.csv
+
+./log:
+test.log
+
+./tmp:
+error.tmp

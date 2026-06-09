@@ -1,0 +1,18 @@
+=== Level 3: TOC-TOU Race Condition Observations ===
+
+Run 1 final inventory: 88  (suspicious - should be 0)
+Run 2 final inventory: 86  (suspicious - should be 0)
+Run 3 final inventory: 86  (suspicious - should be 0)
+Run 4 final inventory: 90  (suspicious - should be 0)
+Run 5 final inventory: 90  (suspicious - should be 0)
+
+Explanation:
+A TOC-TOU (Time-of-Check to Time-of-Use) race condition occurs when
+multiple concurrent processes each read the same shared file, compute
+an update, and write back — with no coordination between them. All 50
+bots launch almost simultaneously and many read the same inventory
+value before anyone has written back. For example, 10 bots might all
+read 100, each compute 98, and all write 98 — so only 2 units are
+deducted instead of 20. The final value depends on the OS scheduler's
+exact timing, which changes every run, producing a different wrong
+answer each time instead of the correct value of 0.
