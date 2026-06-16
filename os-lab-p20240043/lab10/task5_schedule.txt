@@ -1,0 +1,68 @@
+=== my username ===
+se-rasmey-rithysak
+=== installed cron jobs ===
+# Edit this file to introduce tasks to be run by cron.
+# 
+# Each task to run has to be defined through a single line
+# indicating with different fields when the task will be run
+# and what command to run for the task
+# 
+# To define the time you can provide concrete values for
+# minute (m), hour (h), day of month (dom), month (mon),
+# and day of week (dow) or use '*' in these fields (for 'any').
+# 
+# Notice that tasks will be started based on the cron's system
+# daemon's notion of time and timezones.
+# 
+# Output of the crontab jobs (including errors) is sent through
+# email to the user the crontab file belongs to (unless redirected).
+# 
+# For example, you can run a backup of all your user accounts
+# at 5 a.m every week with:
+# 0 5 * * 1 tar -zcf /var/backups/home.tgz /home/
+# 
+# For more information see the manual pages of crontab(5) and cron(8)
+# 
+## Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+30 14 16 6 * /home/se-rasmey-rithysak/bin/lab_session_job >> /home/se-rasmey-rithysak/os-lab-automation/logs/cron_session_job.log 2>&1
+
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+30 14 22 6 * /home/se-rasmey-rithysak/bin/deadline_job >> /home/se-rasmey-rithysak/os-lab-automation/logs/cron_deadline_job.log 2>&1 m h  dom mon dow   command
+# Lab10 heartbeat - runs every minute
+* * * * * date '+\%Y-\%m-\%d \%H:\%M:\%S heartbeat' >> $HOME/os-lab-automation/logs/heartbeat.log 2>&1
+# Lab10 file backup - every 2 minutes (TEST interval)
+*/2 * * * * /home/se-rasmey-rithysak/bin/backup_project >> /home/se-rasmey-rithysak/os-lab-automation/logs/cron_backup.log 2>&1
+=== archives produced by cron ===
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_140001.tar.gz
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_135801.tar.gz
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_135601.tar.gz
+=== backup log (note the new timestamps from cron) ===
+2026-06-16 13:24:36 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:36 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132436.tar.gz
+2026-06-16 13:24:36 | no old archives to prune
+2026-06-16 13:24:36 | backup finished successfully
+2026-06-16 13:24:37 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:37 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132437.tar.gz
+2026-06-16 13:24:37 | no old archives to prune
+2026-06-16 13:24:37 | backup finished successfully
+2026-06-16 13:24:38 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:39 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132438.tar.gz
+2026-06-16 13:24:39 | no old archives to prune
+2026-06-16 13:24:39 | backup finished successfully
+2026-06-16 13:24:40 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:40 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132440.tar.gz
+2026-06-16 13:24:40 | pruned old archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132436.tar.gz
+2026-06-16 13:24:40 | backup finished successfully
+2026-06-16 13:56:01 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:56:01 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_135601.tar.gz
+2026-06-16 13:56:01 | pruned old archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132437.tar.gz
+2026-06-16 13:56:01 | backup finished successfully
+2026-06-16 13:58:01 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:58:01 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_135801.tar.gz
+2026-06-16 13:58:01 | pruned old archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132438.tar.gz
+2026-06-16 13:58:01 | backup finished successfully
+2026-06-16 14:00:01 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 14:00:01 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_140001.tar.gz
+2026-06-16 14:00:01 | pruned old archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132440.tar.gz
+2026-06-16 14:00:01 | backup finished successfully
+=== captured cron output (empty = clean) ===

@@ -1,0 +1,12 @@
+=== teardown script ===
+-rwxrwxr-x 1 se-rasmey-rithysak se-rasmey-rithysak 334 Jun 11 16:16 /home/se-rasmey-rithysak/bin/teardown
+=== process check ===
+No sync processes found.
+=== final working folder ===
+/home/se-rasmey-rithysak/os-lab-deadlock
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_alpha
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_alpha/README.txt
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_alpha/vault.lock
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_beta
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_beta/README.txt
+/home/se-rasmey-rithysak/os-lab-deadlock/vault_beta/vault.lock

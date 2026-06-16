@@ -1,0 +1,5 @@
+=== sync_timeout permissions ===
+-rwxrwxr-x 1 se-rasmey-rithysak se-rasmey-rithysak 585 Jun 11 16:11 /home/se-rasmey-rithysak/bin/sync_timeout
+=== timeout evidence ===
+sync_timeout locked Alpha but could not lock Beta within 5 seconds - exited with error
+=== process check after stopping old script ===

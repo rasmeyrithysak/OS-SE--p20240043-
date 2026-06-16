@@ -1,0 +1,23 @@
+=== backup script permissions ===
+-rwxrwxr-x 1 se-rasmey-rithysak se-rasmey-rithysak 725 Jun 16 13:24 /home/se-rasmey-rithysak/bin/backup_project
+=== archives kept (should be 3) ===
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132440.tar.gz
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132438.tar.gz
+/home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132437.tar.gz
+=== backup log ===
+2026-06-16 13:24:36 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:36 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132436.tar.gz
+2026-06-16 13:24:36 | no old archives to prune
+2026-06-16 13:24:36 | backup finished successfully
+2026-06-16 13:24:37 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:37 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132437.tar.gz
+2026-06-16 13:24:37 | no old archives to prune
+2026-06-16 13:24:37 | backup finished successfully
+2026-06-16 13:24:38 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:39 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132438.tar.gz
+2026-06-16 13:24:39 | no old archives to prune
+2026-06-16 13:24:39 | backup finished successfully
+2026-06-16 13:24:40 | starting backup of /home/se-rasmey-rithysak/os-lab-automation/project
+2026-06-16 13:24:40 | created archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132440.tar.gz
+2026-06-16 13:24:40 | pruned old archive /home/se-rasmey-rithysak/os-lab-automation/backups/project_20260616_132436.tar.gz
+2026-06-16 13:24:40 | backup finished successfully
