@@ -113,5 +113,36 @@ done
 #     crontab: run backup_exam on a short interval AND once at exactly 16:00 today
 #     then: ls ~/exam-backups
 # capture crontab -l + both logs + the ~/exam-backups listing into cron_report.txt
-<your commands>
+mkdir -p sample_project/src sample_project/docs
+echo "print('hello OrbitWorks')" > sample_project/src/main.py
+echo "# OrbitWorks Widget Project" > sample_project/docs/notes.md
+
+nano scripts/backup_project
+chmod +x scripts/backup_project
+for i in 1 2 3 4 5; do ./scripts/backup_project; sleep 1; done
+ls -la backups/
+cat backup_project.log
+
+nano scripts/timed_job
+chmod +x scripts/timed_job
+crontab -e
+# added: * * * * * .../timed_job .../cron_recurring.log
+# added: 35 14 * * * .../timed_job .../cron_oneshot.log
+crontab -l
+cat logs/cron_recurring.log
+cat logs/cron_oneshot.log
+
+nano scripts/backup_exam
+chmod +x scripts/backup_exam
+./scripts/backup_exam
+crontab -e
+# added: */2 * * * * .../scripts/backup_exam
+# added: 0 16 * * * .../scripts/backup_exam
+ls -la ~/exam-backups/
+cat ~/exam-backups/backup_exam.log
+
+crontab -l > cron_report.txt
+cat logs/cron_recurring.log >> cron_report.txt
+cat logs/cron_oneshot.log >> cron_report.txt
+ls -la ~/exam-backups/ >> cron_report.txt
 ```
