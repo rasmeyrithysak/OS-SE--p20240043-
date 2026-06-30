@@ -1,0 +1,50 @@
+#!/bin/bash
+# buy_widget — purchase engine (D3: flock patch + live curveball cap=8)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+STOCK_FILE="$SCRIPT_DIR/stock.txt"
+LOCK_FILE="$SCRIPT_DIR/stock.lock"
+LOG_FILE="$SCRIPT_DIR/sales.log"
+STUDENT_ID="p20240043"
+PURCHASE_CAP=8
+
+buyer="$1"
+qty="$2"
+
+# input validation
+if [ -z "$buyer" ] || [ -z "$qty" ]; then
+    echo "Usage: buy_widget <buyer_name> <quantity>"
+    exit 1
+fi
+
+if ! [[ "$qty" =~ ^[0-9]+$ ]] || [ "$qty" -le 0 ]; then
+    echo "Error: quantity must be a positive integer"
+    exit 1
+fi
+
+# live curveball: per-buyer purchase cap
+if [ "$qty" -gt "$PURCHASE_CAP" ]; then
+    echo "Error: order of $qty exceeds per-buyer cap of $PURCHASE_CAP"
+    exit 1
+fi
+
+# --- critical section, protected by an exclusive advisory lock ---
+(
+    flock -x 200
+
+    current_stock=$(cat "$STOCK_FILE")
+
+    if [ "$qty" -gt "$current_stock" ]; then
+        echo "Error: not enough stock for $buyer (requested $qty, have $current_stock)"
+        exit 1
+    fi
+
+    sleep 0.05
+
+    new_stock=$((current_stock - qty))
+    echo "$new_stock" > "$STOCK_FILE"
+
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | buyer=$buyer | qty=$qty | new_stock=$new_stock | student_id=$STUDENT_ID" >> "$LOG_FILE"
+
+    echo "Purchase OK: $buyer bought $qty Widget(s). Stock now $new_stock"
+) 200>"$LOCK_FILE"

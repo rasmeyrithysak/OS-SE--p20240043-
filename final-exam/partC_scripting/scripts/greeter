@@ -1,0 +1,21 @@
+#!/bin/bash
+# greeter — dynamic banner script
+
+current_user=$(whoami)
+logged_in_count=$(who | wc -l)
+sys_uptime=$(uptime -p)
+
+messages=(
+    "Stay sharp, OrbitWorks engineer."
+    "Widget launch is closer than you think."
+    "Remember to check your logs."
+)
+
+random_msg=${messages[$RANDOM % ${#messages[@]}]}
+
+echo "================================"
+echo " Welcome, $current_user"
+echo " Logged-in users: $logged_in_count"
+echo " System uptime: $sys_uptime"
+echo " $random_msg"
+echo "================================"

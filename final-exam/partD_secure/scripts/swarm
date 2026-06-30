@@ -1,0 +1,18 @@
+
+#!/bin/bash
+# swarm — concurrent purchases (D2/curveball: mix of valid + over-cap orders)
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NUM_BUYERS=40
+
+for i in $(seq 1 "$NUM_BUYERS"); do
+    if [ $((i % 10)) -eq 0 ]; then
+        qty=10   # deliberately over cap (8) — should be rejected
+    else
+        qty=1
+    fi
+    "$SCRIPT_DIR/buy_widget" "buyer$i" "$qty" &
+done
+
+wait
+echo "Swarm finished. All $NUM_BUYERS purchase attempts made."

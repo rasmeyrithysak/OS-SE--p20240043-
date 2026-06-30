@@ -1,0 +1,9 @@
+=== Collector Report — Tue Jun 30 02:10:54 PM +07 2026 ===
+[OK] /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partC_scripting/data1/file1.txt -----------------
+Sales report for OrbitWorks Q1
+
+[OK] /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partC_scripting/data2/file2.txt -----------------
+Widget inventory notes
+
+[SKIP] /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partC_scripting/data3/file3.txt - not readable
+[SKIP] /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partC_scripting/data1/does_not_exist.txt - does not exist

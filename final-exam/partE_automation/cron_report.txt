@@ -1,0 +1,63 @@
+=== Part E2/E3 — Cron Report ===
+
+--- crontab -l ---
+## Lab10 GRADED session job - fires once at 2:30 PM on 2026-06-16 (lab session)
+30 14 16 6 * /home/se-rasmey-rithysak/bin/lab_session_job >> /home/se-rasmey-rithysak/os-lab-automation/logs/cron_session_job.log 2>&1
+# Lab10 GRADED deadline job - fires once at 2:30 PM on 2026-06-22 (before deadline)
+30 14 22 6 * /home/se-rasmey-rithysak/bin/deadline_job >> /home/se-rasmey-rithysak/os-lab-automation/logs/cron_deadline_job.log 2>&1 m h  dom mon dow   command
+* * * * * /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/scripts/timed_job /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/logs/cron_recurring.log
+35 14 * * * /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/scripts/timed_job /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/logs/cron_oneshot.log
+*/2 * * * * /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/scripts/backup_exam
+0 16 * * * /home/se-rasmey-rithysak/OS-SE--p20240043-/final-exam/partE_automation/scripts/backup_exam
+
+--- cron_recurring.log (every 1 min) ---
+2026-06-30 14:28:01 | timed_job fired (PID 1580691)
+2026-06-30 14:29:02 | timed_job fired (PID 1582102)
+2026-06-30 14:30:01 | timed_job fired (PID 1583798)
+2026-06-30 14:31:01 | timed_job fired (PID 1585428)
+2026-06-30 14:32:01 | timed_job fired (PID 1587747)
+2026-06-30 14:33:01 | timed_job fired (PID 1589346)
+2026-06-30 14:34:01 | timed_job fired (PID 1590669)
+2026-06-30 14:35:01 | timed_job fired (PID 1592516)
+2026-06-30 14:36:01 | timed_job fired (PID 1594845)
+2026-06-30 14:37:01 | timed_job fired (PID 1598761)
+2026-06-30 14:38:01 | timed_job fired (PID 1600032)
+2026-06-30 14:39:01 | timed_job fired (PID 1601894)
+2026-06-30 14:40:01 | timed_job fired (PID 1605568)
+2026-06-30 14:41:01 | timed_job fired (PID 1608384)
+2026-06-30 14:42:01 | timed_job fired (PID 1610094)
+2026-06-30 14:43:01 | timed_job fired (PID 1611678)
+2026-06-30 14:44:01 | timed_job fired (PID 1614553)
+2026-06-30 14:45:01 | timed_job fired (PID 1617377)
+2026-06-30 14:46:01 | timed_job fired (PID 1619469)
+2026-06-30 14:47:01 | timed_job fired (PID 1622887)
+2026-06-30 14:48:01 | timed_job fired (PID 1628689)
+2026-06-30 14:49:01 | timed_job fired (PID 1640642)
+2026-06-30 14:50:01 | timed_job fired (PID 1643667)
+2026-06-30 14:51:01 | timed_job fired (PID 1647263)
+2026-06-30 14:52:01 | timed_job fired (PID 1650880)
+2026-06-30 14:53:01 | timed_job fired (PID 1653252) | SEALTAG
+2026-06-30 14:54:01 | SKIPPED - SEALTAG already recorded for 2026-06-30
+2026-06-30 14:55:01 | SKIPPED - SEALTAG already recorded for 2026-06-30
+
+--- cron_oneshot.log (fired once at 14:35) ---
+2026-06-30 14:35:01 | timed_job fired (PID 1592545)
+
+--- exam-backups listing ---
+total 7116
+drwxrwxr-x  2 se-rasmey-rithysak se-rasmey-rithysak   4096 Jun 30 14:54 .
+drwxr-x--x 19 se-rasmey-rithysak se-rasmey-rithysak   4096 Jun 30 14:28 ..
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak    896 Jun 30 14:54 backup_exam.log
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 489899 Jun 30 14:30 final-exam-20260630-143013.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 489922 Jun 30 14:32 final-exam-20260630-143201.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 489942 Jun 30 14:34 final-exam-20260630-143401.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 490058 Jun 30 14:36 final-exam-20260630-143601.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 489981 Jun 30 14:38 final-exam-20260630-143801.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 490067 Jun 30 14:40 final-exam-20260630-144001.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 490086 Jun 30 14:42 final-exam-20260630-144201.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 490110 Jun 30 14:44 final-exam-20260630-144401.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 594177 Jun 30 14:46 final-exam-20260630-144601.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 594427 Jun 30 14:48 final-exam-20260630-144801.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 594486 Jun 30 14:50 final-exam-20260630-145001.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 771301 Jun 30 14:52 final-exam-20260630-145201.tar.gz
+-rw-rw-r--  1 se-rasmey-rithysak se-rasmey-rithysak 771629 Jun 30 14:54 final-exam-20260630-145401.tar.gz

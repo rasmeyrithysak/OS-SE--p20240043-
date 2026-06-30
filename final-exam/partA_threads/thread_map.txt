@@ -1,0 +1,11 @@
+    PID     LWP TTY      STAT   TIME COMMAND
+1480263 1480263 pts/8    Sl     0:00 ./partA_threads/thread_demo
+1480263 1480264 pts/8    Sl     0:00 ./partA_threads/thread_demo
+1480263 1480265 pts/8    Sl     0:00 ./partA_threads/thread_demo
+1480263 1480266 pts/8    Sl     0:00 ./partA_threads/thread_demo
+1480263 1480267 pts/8    Sl     0:00 ./partA_threads/thread_demo
+1480897 1480897 pts/40   Sl     0:00 ./thread_demo
+1480897 1480899 pts/40   Sl     0:00 ./thread_demo
+1480897 1480900 pts/40   Sl     0:00 ./thread_demo
+1480897 1480901 pts/40   Sl     0:00 ./thread_demo
+1480897 1480902 pts/40   Sl     0:00 ./thread_demo

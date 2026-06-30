@@ -1,0 +1,31 @@
+#!/bin/bash
+# backup_project — timestamped, compressed backup with retention of 3
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+PROJECT_DIR="$SCRIPT_DIR/sample_project"
+BACKUP_DIR="$SCRIPT_DIR/backups"
+RETAIN_N=3
+
+mkdir -p "$BACKUP_DIR"
+
+timestamp=$(date '+%Y%m%d-%H%M%S')
+archive_name="sample_project-$timestamp.tar.gz"
+
+tar -czf "$BACKUP_DIR/$archive_name" -C "$SCRIPT_DIR" sample_project
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') | created $archive_name" >> "$SCRIPT_DIR/backup_project.log"
+
+# prune: keep only the newest RETAIN_N archives
+cd "$BACKUP_DIR" || exit 1
+count=$(ls -1t sample_project-*.tar.gz | wc -l)
+if [ "$count" -gt "$RETAIN_N" ]; then
+    to_delete=$(ls -1t sample_project-*.tar.gz | tail -n +$((RETAIN_N + 1)))
+    for f in $to_delete; do
+        rm -f "$f"
+        echo "$(date '+%Y-%m-%d %H:%M:%S') | pruned $f" >> "$SCRIPT_DIR/backup_project.log"
+    done
+fi
+
+echo "Backup complete: $archive_name"
+echo "Current archives:"
+ls -1t "$BACKUP_DIR"

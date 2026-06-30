@@ -1,0 +1,5 @@
+=== Collector Report — Tue Jun 30 02:08:09 PM +07 2026 ===
+[SKIP] data1/file1.txt - does not exist
+[SKIP] data2/file2.txt - does not exist
+[SKIP] data3/file3.txt - does not exist
+[SKIP] data1/does_not_exist.txt - does not exist

@@ -1,0 +1,25 @@
+=== Part D2 — Race Reproduction (unpatched) ===
+Scenario: stock=200, concurrent buyers=40, each buys 1
+
+Run 1: final stock = 199 (expected 160)
+Run 2: final stock = 199 (expected 160)
+Run 3: final stock = 199 (expected 160)
+Run 4: final stock = 199 (expected 160)
+Run 5: final stock = 199 (expected 160)
+
+Note: All 5 runs consistently ended at 199, not 160. This is the race condition in its
+extreme form — because buy_widget's read (cat stock.txt) and write (echo > stock.txt)
+are not atomic and have no synchronization, all 40 background processes read stock=200
+nearly simultaneously before any of them finished writing. Only the last process to
+write "wins" and its decrement (200-1=199) is the only one that survives; the other 39
+decrements based on the same stale read value of 200 get overwritten. This is the
+classic TOCTOU (time-of-check to time-of-use) lost-update problem on a shared file with
+no locking.
+
+=== Part D3 — Patched with flock ===
+Patched run 1: final stock = 160
+Patched run 2: final stock = 160
+Patched run 3: final stock = 160
+Patched run 4: final stock = 160
+Patched run 5: final stock = 160
+All runs now deterministic at the correct value (200 - 40 = 160).

@@ -1,0 +1,23 @@
+=== Permission Story — Part B1 ===
+
+--- private_file.txt (owner rw only) ---
+-rw------- 1 se-rasmey-rithysak se-rasmey-rithysak 37 Jun 30 13:58 private_file.txt
+  File: private_file.txt
+  Size: 37        	Blocks: 8          IO Block: 4096   regular file
+Device: 252,0	Inode: 47350009    Links: 1
+Access: (0600/-rw-------)  Uid: ( 1138/se-rasmey-rithysak)   Gid: ( 1140/se-rasmey-rithysak)
+Access: 2026-06-30 13:58:58.174107872 +0700
+Modify: 2026-06-30 13:58:58.174107872 +0700
+Change: 2026-06-30 13:59:38.612833323 +0700
+ Birth: 2026-06-30 13:58:58.174107872 +0700
+
+--- shared_dir (traversable, not listable by others) ---
+drwx--x--x 2 se-rasmey-rithysak se-rasmey-rithysak 4096 Jun 30 13:58 shared_dir
+  File: shared_dir
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 252,0	Inode: 47350008    Links: 2
+Access: (0711/drwx--x--x)  Uid: ( 1138/se-rasmey-rithysak)   Gid: ( 1140/se-rasmey-rithysak)
+Access: 2026-06-30 13:58:58.909102896 +0700
+Modify: 2026-06-30 13:58:58.172107886 +0700
+Change: 2026-06-30 13:59:38.613833316 +0700
+ Birth: 2026-06-30 13:58:58.172107886 +0700

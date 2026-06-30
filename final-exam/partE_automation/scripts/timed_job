@@ -1,0 +1,21 @@
+#!/bin/bash
+# timed_job — idempotent version using token SEALTAG (live curveball)
+
+output_file="$1"
+TOKEN="SEALTAG"
+today=$(date '+%Y-%m-%d')
+
+if [ -z "$output_file" ]; then
+    echo "Usage: timed_job <output_file>"
+    exit 1
+fi
+
+touch "$output_file"
+
+# check if today's marker already exists in the log
+if grep -q "${today}.*${TOKEN}" "$output_file" 2>/dev/null; then
+    echo "$(date '+%Y-%m-%d %H:%M:%S') | SKIPPED - ${TOKEN} already recorded for ${today}" >> "$output_file"
+    exit 0
+fi
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') | timed_job fired (PID $$) | ${TOKEN}" >> "$output_file"
